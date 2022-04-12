@@ -1,5 +1,6 @@
-# Als je als laatst op de Up knop hebt gedrukt en je dan dubbel klikt op het label met het getal dan moet het getal wat in het label staat worden verdrievoudigd.
-# Als je als laatst op de Down knop hebt gedrukt en je dan dubbel klikt op het label met het getal dan moet het getal wat in het label staat door 3 gedeeld worden.
+# Als je op de + of het pijltje omhoog van je toetsenbord drukt word de zelfde functionaliet afgevuurd als op de up button.
+# Als je op de – of het pijltje omlaag van je toetsenbord drukt word de zelfde functionaliet afgevuurd als op de down button.
+# Als je op de spatie balk klikt word dezelfde functionaliteit afgevuurd als of je dubbel klikt op het label.
 
 import tkinter as tk
 
@@ -53,14 +54,11 @@ def KleurVeranderen(event):
 
 def DubbelKlik(event):
     global TextNumber
-    print (LaatstOmhoogOmlaag)
     if LaatstOmhoogOmlaag == True:
         TextNumber *= 3
-        TextNumber -= 1
         box1.configure(text= TextNumber)
     else:
         TextNumber /= 3
-        TextNumber += 1
         box1.configure(text= TextNumber)
 
 
@@ -85,5 +83,6 @@ Button2.pack(padx=100, pady=30)
 
 button.bind('<Double-Button>', DubbelKlik)
 Button2.bind('<Double-Button>', DubbelKlik)
+
 
 window.mainloop()
